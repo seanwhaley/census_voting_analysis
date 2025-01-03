@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: data_analysis_app
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    command: bash -c "python check_for_data.py && python main.py"
